@@ -1,0 +1,44 @@
+*{
+    font-family: Helvetica, sans-serif;
+
+}
+
+#introduction{
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: center;
+}
+
+#PlaybackSpeedCalculator{
+    margin: auto;
+    width: 50%;
+}
+
+#PlaybackSpeedCalculator input {
+    text-align: center;
+}
+
+h1{
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+}
+
+#minutes{
+    width: 100%;   
+}
+#PlaybackSpeedCalculator h5{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+#speed{
+    width: 100%; 
+}
+
+#CalculateButton{
+    margin-top: 45px;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+
+}

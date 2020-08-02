@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Little</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+<body>
+    <div id="introduction">
+        <h1>Michael Little</h1>
+        <br>
+        <p>Hi. My Name is Michael, I am an IT professional and 
+            a current IT student at LaTrobe University.</p>
+    </div>
+    <!---<nav>
+        <ul>
+        <li>Home</li>
+        <li>MiniProjects</li>
+    </ul>
+    </nav> --->
+
+    <div id="PlaybackSpeedCalculator">
+        <h1>Playback Speed Calculator</h1>
+
+        <Form>
+            <!--Hours:<input type="text" id="hours"><br>-->
+            <h5>Video Length (minutes):</h5>
+            <input type="text" id="minutes"><br>
+            <h5>Playback Speed:</h5>
+            <input type="text" id="speed"><br>
+            <button type="button" id="CalculateButton" onclick="calc()">Calculate</button>
+        </Form>
+        <br>
+        <div id="result"></div>
+
+        <script src="SpeedCalculator.js"></script>
+    </div>
+</body>
+
+</html>
