@@ -1,0 +1,99 @@
+:root{
+    --White: hsl(0, 0%, 100%);
+    --Grey: hsl(0, 0%, 20%);
+    --Dark-Grey: #1F1F1F;
+    --Off-Black: #141414;
+    --button-background: #333333;
+    --highlight: hsl(75, 94%, 57%);
+
+}
+body{
+    color: var(--White);
+    background-color: var(--Off-Black);
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-links{
+    width:275px;
+    background-color: var(--Dark-Grey);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+
+}
+
+h1{
+    font-size: 1.8em;
+    margin-bottom: 8px;
+
+}
+
+.location{
+    color: var(--highlight);
+}
+
+.blurb{
+    font-size: 13px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-image{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-group{
+    width:95%;
+}
+
+.button{
+    font-weight: 600;
+    color: var(--White);
+    font-family: "Inter", sans-serif;
+    background-color: var(--button-background);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: var(--highlight);
+}
+
+.button:hover{
+    background-color: var(--highlight);
+}
+
+.button:active{
+    background-color: #B3E227;
+}
+/*
+.flex{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    height: 100px;
+    width: 100px;
+    background-color:blue;
+}
+*/

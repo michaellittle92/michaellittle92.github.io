@@ -1,0 +1,159 @@
+:root{
+    /* ### Primary */
+    --Nutmeg: hsl(14, 45%, 36%);
+    --Dark-Raspberry: hsl(332, 51%, 32%);
+
+    /* ### Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Rose-White: hsl(330, 100%, 98%);
+    --Eggshell: hsl(30, 54%, 90%);
+    --Light-Grey: hsl(30, 18%, 87%);
+    --Wenge-Brown: hsl(30, 10%, 34%);
+    --Dark-Charcoal: hsl(24, 5%, 18%);
+
+}
+
+.young-serif-regular {
+    font-family: "Young Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+/*  
+  .outfit-<uniquifier> {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
+*/
+
+body{
+    font-family: "Outfit", sans-serif;
+    font-weight: 400;
+    color:var(--Wenge-Brown);
+    margin:0;
+}
+
+.content{
+
+    width: 83%;
+    margin: auto;
+}
+
+p{
+    font-size: 16px;
+}
+
+li::marker{
+    color:var(--Nutmeg)
+}
+
+.meal-title{
+    color: var(--Dark-Charcoal)
+}
+
+.summary{
+    background-color: #FFF7FB;
+    padding:10px 15px;
+    border-radius: 10%;
+    padding-bottom: 5px;
+}
+
+.summary h3{
+    color:var(--Dark-Raspberry);
+    font-size: 1.4em;
+    margin-top: 5px;
+    margin-bottom: 15px;
+
+}
+
+.summary ul{
+    padding-left: 25px;;
+}
+
+.summary li{
+    padding-left:15px;
+    padding-bottom: 10px;
+    padding-right:30px;
+}
+
+summary li::marker{
+    color:var(--Dark-Raspberry);
+}
+
+h2{
+    margin-top: 25px;
+    color:var(--Nutmeg);
+    font-family: "Young Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+li{
+    font-family: "Outfit", sans-serif;
+    padding-bottom: 12px;
+}
+
+.ingredients,.instructions{
+    border-bottom: solid var(--Light-Grey);
+}
+
+.nutrition{
+    margin-bottom: 50px;
+}
+
+.nutrition table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.nutrition table tr {
+    border-bottom: solid var(--Light-Grey);
+
+}
+
+.nutrition table tr:last-child{
+    border-bottom: none;
+}
+
+.nutrition table td{
+    padding:15px
+}
+
+
+.nutrition .value{
+    color:var(--Nutmeg);
+    font-weight: 600;
+}
+
+.omelette-image{
+    width: 100%;
+    }
+
+
+    @media (min-width: 765px) {
+        .flex{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--Eggshell);
+        }
+    
+    
+        .container{
+            margin: 50px;
+            border-radius: 15px;
+            max-width: 765px;
+            background-color: white;
+        }
+        .omelette-image{
+            display: block;
+            width: 90%;
+            border-radius: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+        }
+    }    

@@ -1,0 +1,82 @@
+:root{
+    --yellow: hsl(47, 88%, 63%);
+    --white: hsl(0, 0%, 100%);
+    --grey: hsl(0, 0%, 50%);
+    --black: hsl(0, 0%, 7%)
+}
+
+p{
+    font-size: 16px;
+}
+
+body{
+    margin: 0;
+    font-family: "Figtree", sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    background-color: var(--yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-card{
+    max-width: 275px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px black solid;
+    padding: 20px;
+    box-shadow: 10px 10px var(--black);
+
+}
+
+.preview-image{
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.category{
+    background-color: var(--yellow);
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.date-published{
+    font-size: 12px;
+}
+
+.post-title{
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.post-description{
+    font-size: 13px;
+    color:var(--grey);
+}
+
+.author-section{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.author-image{
+    width: 40px;
+    height:40px
+}
+
+.author-attribution{
+    display: inline;
+    margin-left: 10px;
+    font-weight: 800;
+}
