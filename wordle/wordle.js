@@ -1,82 +1,162 @@
-init();
+const letters = document.querySelectorAll(".letter");
+const message = document.querySelector(".message");
+const ANSWER_LENGTH = 5;
+const ROUNDS = 6;
 
 async function init() {
-  let currentletterindex = 1;
-  lengthLimit = 6;
-  counter = 0;
-  const WordOftheDayURL = "https://words.dev-apis.com/word-of-the-day";
-  let wordOfTheDay = "";
   let currentGuess = "";
+  let currentRow = 0;
+  let gameOver = false;
+  let isLoading = true;
 
-  const res = await fetch(WordOftheDayURL);
+  setLoading(true);
+
+  const res = await fetch("https://words.dev-apis.com/word-of-the-day");
   const resObj = await res.json();
-  wordOfTheDay = resObj.word.toUpperCase();
+  const word = resObj.word.toUpperCase();
+  const wordParts = word.split("");
 
-  console.log("word of the day: " + wordOfTheDay);
+  //turn off loading animation;
 
-  document.onkeydown = function (event) {
-    if (event.key === "Backspace") {
-      HandleBackspace();
-    } else if (event.key === "Enter") {
-      CheckWord();
-    } else if (isLetter(event.key)) {
-      HandleLetter(event.key.toUpperCase());
-    }
-  };
+  console.log(word);
+  isLoading = false;
+  setLoading(false);
 
-  function HandleLetter(letter) {
-    if (currentletterindex < lengthLimit) {
-      let targetedBox = document.querySelector(
-        `#letter-box-${currentletterindex}`
-      );
-      let letterValue = document.createTextNode(letter);
-      targetedBox.appendChild(letterValue);
-      currentletterindex++;
-      counter++;
-      console.log(`Counter: ${counter}`);
+  function addLetter(letter) {
+    //add letter to the end of the current guess
+    if (currentGuess.length < ANSWER_LENGTH) {
       currentGuess += letter;
-      console.log("current Guess: ", currentGuess);
     } else {
+      //replace the last letter
+      currentGuess =
+        currentGuess.substring(0, currentGuess.length - 1) + letter;
+    }
+    letters[ANSWER_LENGTH * currentRow + currentGuess.length - 1].innerText =
+      letter;
+  }
+
+  async function commit() {
+    if (currentGuess.length !== ANSWER_LENGTH) {
+      // do nothing
       return;
+    }
+
+    // TODO: validate word.
+
+    isLoading = true;
+    setLoading(true);
+
+    const res = await fetch("https://words.dev-apis.com/validate-word", {
+      method: "POST",
+      body: JSON.stringify({ word: currentGuess }),
+    });
+
+    const resObj = await res.json();
+    const validWord = resObj.validWord;
+
+    isLoading = false;
+    setLoading(false);
+
+    if (!validWord) {
+      markInvalidWord();
+      return;
+    }
+
+    // marking correct close or incorrect.
+
+    const guessParts = currentGuess.split("");
+    const map = makeMap(wordParts);
+    console.log(map);
+
+    for (let i = 0; i < ANSWER_LENGTH; i++) {
+      //mark as correct
+      if (guessParts[i] === wordParts[i]) {
+        letters[currentRow * ANSWER_LENGTH + i].classList.add("correct");
+        map[guessParts[i]]--;
+      }
+    }
+
+    for (let i = 0; i < ANSWER_LENGTH; i++) {
+      if (guessParts[i] === wordParts[i]) {
+        //do nothing. class already assigned
+      } else if (wordParts.includes(guessParts[i]) && map[guessParts[i]] > 0) {
+        //mark as close
+        letters[currentRow * ANSWER_LENGTH + i].classList.add("close");
+        map[guessParts[i]]--;
+      } else {
+        letters[currentRow * ANSWER_LENGTH + i].classList.add("incorrect");
+      }
+    }
+
+    //check wining state
+
+    if (currentGuess === word) {
+      gameOver = true;
+      alert("winner");
+    }
+    currentRow++;
+    currentGuess = "";
+
+    if (currentRow === ROUNDS) {
+      gameOver = true;
+      alert(`you loose. the word was ${word}`);
+    }
+  }
+
+  function backspace() {
+    currentGuess = currentGuess.substring(0, currentGuess.length - 1);
+    letters[ANSWER_LENGTH * currentRow + currentGuess.length].innerText = "";
+  }
+
+  function markInvalidWord() {
+    //alert("not valid word");
+
+    for (let i = 0; i < ANSWER_LENGTH; i++) {
+      letters[currentRow * ANSWER_LENGTH + i].classList.remove("invalid");
+      setTimeout(function () {
+        letters[currentRow * ANSWER_LENGTH + i].classList.add("invalid");
+      }, 20);
     }
   }
 
   function isLetter(letter) {
     return /^[a-zA-Z]$/.test(letter);
   }
-
-  function HandleBackspace() {
-    if (currentletterindex > 1 && counter > 0) {
-      currentletterindex--;
-      counter--;
-      console.log("backspace pressed");
-      let targetedBox = document.querySelector(
-        `#letter-box-${currentletterindex}`
-      );
-      targetedBox.innerHTML = "";
-      targetedBox.appendChild(document.createTextNode(""));
-      currentGuess = currentGuess.substring(0, currentGuess.length - 1);
-    } else {
+  document.addEventListener("keydown", function handleKeyPress(event) {
+    if (gameOver || isLoading) {
+      //do nothing
       return;
     }
+
+    const action = event.key;
+
+    if (action === "Enter") {
+      commit();
+    } else if (action === "Backspace") {
+      backspace();
+    } else if (isLetter(action)) {
+      addLetter(action.toUpperCase());
+    } else {
+      // doesnt do anything;
+    }
+  });
+
+  function setLoading(isLoading) {
+    message.classList.toggle("show", isLoading);
   }
 
-  function CheckWord() {
-    if (currentGuess === wordOfTheDay) {
-      console.log("winner.");
-    } else {
-      //if wrong go to new run this code {
-      //Validate the word.
-      let wordisValid = true;
-      if (wordisValid && lengthLimit <= 30 && counter === 5) {
-        console.log("this is where ill need to check the word");
-
-        lengthLimit += 5;
-        console.log(lengthLimit);
-        counter = 0;
-        //}
+  function makeMap(array) {
+    const obj = {};
+    for (let i = 0; i < array.length; i++) {
+      const letter = array[i];
+      if (obj[letter]) {
+        obj[letter]++;
+      } else {
+        obj[letter] = 1;
       }
-      currentGuess = "";
     }
+    return obj;
   }
 }
+
+init();
