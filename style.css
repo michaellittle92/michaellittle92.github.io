@@ -12,12 +12,47 @@ body{
     border-radius: 10px;
 }
 
+
+
 .recent-projects-container{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.project-image{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    border: 1.5px solid black;
+}
+
 .project{
     width:305px;
+}
+
+main{
+    max-width: 80%;
+    margin: 0 auto 0 auto;
+}
+
+a{
+    color:black;
+    
+}
+
+@media (min-width: 768px){
+    .recent-projects-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: flex-start;
+    }
+}
+
+@media (min-width: 992px){
+    .recent-projects-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: flex-start;
+    }
 }

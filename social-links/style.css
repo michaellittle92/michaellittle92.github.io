@@ -83,6 +83,10 @@ h1{
 .button:active{
     background-color: #B3E227;
 }
+
+a{
+    text-decoration: none;
+}
 /*
 .flex{
     height: 100vh;
