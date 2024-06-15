@@ -11,9 +11,6 @@ body{
     margin-right: auto;
     border-radius: 10px;
 }
-
-
-
 .recent-projects-container{
     display: flex;
     flex-direction: column;

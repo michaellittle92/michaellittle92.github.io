@@ -1,0 +1,4 @@
+-DIY RC Car
+-Self Driving with Lidar?
+-Train Machine Learning model in sim use model in actual car.
+-3d print parts of track - modular - looking at adaptability
