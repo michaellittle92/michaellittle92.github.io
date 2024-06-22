@@ -1,6 +1,6 @@
 
 
-let apiKey = '';
+let apiKey = '73057ea301005fa9e9fc682b33dde1d1';
 let lat = -37; 
 let lon = 140;
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
