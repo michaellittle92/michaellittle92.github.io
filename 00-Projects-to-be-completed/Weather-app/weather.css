@@ -1,9 +1,44 @@
+
+
 body{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    background: rgb(15,100,102);
+    background: linear-gradient(214deg, rgba(15,100,102,1) 0%, rgba(210,232,227,1) 100%);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container{
+    display: flex;
+    height: 100vh;
 }
 
 .weather-info{
-    background-color: red;
-    width:70%
+    padding-top: 30px;
+    background-color: #FFCB9A;
+    color:white;
+    width:325px;
+    height:70%;
+    margin: auto;
+    border-radius: 30px;
+    border: 7px solid white;
+}
+
+.weather-info h2, .weather-info p {
+    text-align: center;
+}
+
+#max{
+    margin-top:0;
+    margin-bottom: 0;
+    font-size: 80px;
+}
+
+#weather-icon{
+    height:50%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+
 }

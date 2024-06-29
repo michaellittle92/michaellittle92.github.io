@@ -1,18 +1,28 @@
 async function Init(){
-   let date = getDate();
-   let location = 'Melbourne'
+    let minTemp = document.getElementById('min-temp');
+    let maxTemp = document.getElementById('max-temp');
+    let weatherIcon = document.getElementById("weather-icon");
+    let date = getDate();
+    let location = 'Melbourne';
 
-   const res = await fetch(buildDailyForcastApiString(date, location, apiKey));
-   const resObj = await res.json();  
-   let maxTempFromApi = (resObj.forecast.forecastday[0].day.maxtemp_c); 
-   let minTempFromApi = (resObj.forecast.forecastday[0].day.mintemp_c); 
+    let todayWeather = (await getTodayWeather(date, location));
+    maxTemp.innerText = todayWeather[0];
+    minTemp.innerText = todayWeather[1];
+    if (todayWeather[2].toLowerCase().includes('rain')){
+        weatherIcon.src = "images/rainy-3.svg";
+        
+    }
+    else{
+        weatherIcon.src = "images/cloudy-1-day.svg";
+    };
 
-   let maxTemp = document.getElementById('max-temp');
-   maxTemp.innerText = maxTempFromApi;
+}
 
-   let minTemp = document.getElementById('min-temp');
-   minTemp.innerText = minTempFromApi
-
+async function getTodayWeather(date, location){
+    const res = await fetch(buildDailyForcastApiString(date, location, apiKey));
+    const resObj = await res.json();  
+    let weather = [resObj.forecast.forecastday[0].day.maxtemp_c, resObj.forecast.forecastday[0].day.mintemp_c, resObj.forecast.forecastday[0].day.condition.text];
+    return weather
 }
 
 function getDate(){
