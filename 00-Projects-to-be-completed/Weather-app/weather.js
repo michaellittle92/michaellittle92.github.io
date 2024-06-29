@@ -1,22 +1,29 @@
+async function Init(){
+   let date = getDate();
+   let location = 'Melbourne'
 
-
-let apiKey = '73057ea301005fa9e9fc682b33dde1d1';
-let lat = -37; 
-let lon = 140;
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-
-async function init(){
-    const currentTemp = await getCurrentTemp();
-    console.log(currentTemp + '°');
+   
 }
 
-async function getCurrentTemp(){
-    const res = await fetch(apiUrl);
-    const resObj = await res.json();
-    return convertKelvinToCelsius(resObj.main.temp);
+function getDate(){
+    let today = new Date();
+    let yyyy = today.getFullYear();
+    let mm = today.getMonth() + 1;
+    let dd = today.getDate();
+    if (mm < 10){
+        mm = '0' + mm;
+    }
+    if (dd < 10){
+        dd = '0' + dd;
+    }
+    let date = `${yyyy}-${mm}-${dd}`;
+    return date;
 }
 
-function convertKelvinToCelsius(tempKelvin){
-    return tempKelvin -273.15;
+function buildDailyForcastApiString(date, location, apiKey){
+let apiString = `https://api.weatherapi.com/v1/forecast.json?q=${location}&days=1&dt=${date}&key=${apiKey}`
+return apiString;
 }
-init();
+
+Init()
+
