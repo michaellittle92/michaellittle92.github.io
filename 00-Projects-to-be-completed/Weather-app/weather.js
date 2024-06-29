@@ -2,7 +2,17 @@ async function Init(){
    let date = getDate();
    let location = 'Melbourne'
 
-   
+   const res = await fetch(buildDailyForcastApiString(date, location, apiKey));
+   const resObj = await res.json();  
+   let maxTempFromApi = (resObj.forecast.forecastday[0].day.maxtemp_c); 
+   let minTempFromApi = (resObj.forecast.forecastday[0].day.mintemp_c); 
+
+   let maxTemp = document.getElementById('max-temp');
+   maxTemp.innerText = maxTempFromApi;
+
+   let minTemp = document.getElementById('min-temp');
+   minTemp.innerText = minTempFromApi
+
 }
 
 function getDate(){
