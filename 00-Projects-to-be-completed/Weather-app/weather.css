@@ -47,16 +47,25 @@ body{
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap:10px;
+    flex-direction: column;
+    gap: 30px;
 }
 .day{
-    width: 100px;
-    height: 100px;
     display: block;
     background-color: #FFCB9A;
-
+    width: 325px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 30px;
     border: 7px solid white;
+    text-align: center;
+    color:white;
+}
+
+.daily-max-temp{
+    font-size: 30px;
+}
+
+.day img{
+    height: 100px;
 }

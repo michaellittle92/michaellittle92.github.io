@@ -33,6 +33,9 @@ async function getWeather( location){
     if(weather[2].toLowerCase() === 'patchy rain nearby'){
         weatherIcon.src = "images/rainy-1.svg";
     }
+    if(weather[2].toLowerCase() === 'sunny'){
+        weatherIcon.src = "images/clear-day-cropped.svg";
+    }
     else if (weather[2].toLowerCase().includes('rain')){
         weatherIcon.src = "images/rainy-3.svg";
     
