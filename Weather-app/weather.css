@@ -62,10 +62,24 @@ body{
     color:white;
 }
 
-.daily-max-temp{
-    font-size: 30px;
+.temp-container{
+    font-size: 25px;
+}
+
+.daily-min-temp{
+    font-size: 25px;
+    color:grey;
 }
 
 .day img{
     height: 100px;
+}
+
+@media only screen and (min-width: 600px) {
+    .weekly-forecast{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
 }
