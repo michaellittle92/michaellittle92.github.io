@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    justify-content: center;
+    gap:2vw
+}
+.input-container{
+    width: 40%;
+    border: 1px red solid;
+}
+
+.task-container{
+    width: 40%;
+    border: 1px blue solid;
+}
