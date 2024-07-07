@@ -4,16 +4,24 @@ function getTaskInput(){
     task.value = '';
 }
 
+function removeTask(){
+    
+}
+
 function setTask(task){
     const taskList = document.querySelector('#task-list');
     const newTask = document.createElement('li');
     newTask.textContent = task;
-    console.log(taskList.getElementsByTagName('li'))
 
     //Remove task Button
 
     const closeTask = document.createElement('button');
     closeTask.textContent = 'X'
+    closeTask.classList.add('close-task');
+
+    closeTask.addEventListener('click', function(){
+        taskList.removeChild(newTask);
+    });
     newTask.appendChild(closeTask);
 
 
