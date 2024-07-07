@@ -1,6 +1,4 @@
-
-
-body{
+body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -9,77 +7,105 @@ body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.container-today-forecast{
+.container-today-forecast {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
+    padding: 20px;
 }
 
-.weather-info{
+.weather-info {
     padding-top: 30px;
     background-color: #FFCB9A;
-    color:white;
-    width:325px;
-    height:70%;
-    margin: auto;
+    color: white;
+    width: 90%;
+    max-width: 325px;
+    height: auto;
+    margin: 20px auto;
     border-radius: 30px;
     border: 7px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .weather-info h2, .weather-info p {
     text-align: center;
 }
 
-#max{
-    margin-top:0;
+#max {
+    margin-top: 0;
     margin-bottom: 0;
     font-size: 80px;
 }
 
-#weather-icon{
-    width:300px;
+#weather-icon {
+    width: 80%;
+    max-width: 300px;
     display: block;
-    margin-right: auto;
-    margin-left: auto;
-
+    margin: 20px auto;
 }
 
-.weekly-forecast{
-    margin-left: auto;
-    margin-right: auto;
+.container-weekly-forecast {
+    width: 100%;
+    padding: 20px;
+}
+
+.weekly-forecast {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    width: 90%;
+    margin: 0 auto;
 }
-.day{
-    display: block;
+
+.day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #FFCB9A;
-    width: 325px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 90%;
+    max-width: 325px;
+    margin: 0 auto;
     border-radius: 30px;
     border: 7px solid white;
     text-align: center;
-    color:white;
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.temp-container{
+.temp-container {
     font-size: 25px;
 }
 
-.daily-min-temp{
+.daily-min-temp {
     font-size: 25px;
-    color:grey;
+    color: grey;
 }
 
-.day img{
+.day img {
     height: 100px;
 }
 
 @media only screen and (min-width: 600px) {
-    .weekly-forecast{
-        display: flex;
+    .container-today-forecast {
+        flex-direction: row;
+    }
+
+    .container-weekly-forecast {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .weekly-forecast {
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
     }
-    
+
+    .day {
+        width: 45%;
+        max-width: 325px;
+    }
 }

@@ -1,17 +1,9 @@
-let playerOne;
-let playerTwo;
+const board = document.querySelectorAll('.square');
 
-let playerOneScore = 0;
-let playerTwoScore = 0;
-
-let currentplayer = 0;
-
-const squares = document.querySelectorAll(".square");
-
-for (let i = 0; i < squares.length; i++) {
-  squares[i].addEventListener("click", selectedSquare);
+for (let i = 0; i < board.length; i++){
+  board[i].addEventListener('click', function(){
+    board[i].textContent = 'x'
+  })
 }
 
-function selectedSquare(i) {
-  console.log("click " + i);
-}
+board[0].textContent = 'x';
