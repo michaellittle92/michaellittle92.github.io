@@ -12,3 +12,15 @@
     width: 40%;
     border: 1px blue solid;
 }
+
+@media only screen and (max-width: 600px){
+    .container{
+        flex-direction: column;
+    }
+    .input-container{
+        width: 80%;
+    }
+    .task-container{
+        width: 80%;
+    }
+}
