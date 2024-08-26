@@ -4,10 +4,6 @@ function getTaskInput(){
     task.value = '';
 }
 
-function removeTask(){
-    
-}
-
 function setTask(task){
     const taskList = document.querySelector('#task-list');
     const newTask = document.createElement('li');
@@ -28,10 +24,6 @@ function setTask(task){
     //add to page 
     taskList.appendChild(newTask)
 }
-
-
-
-
 
 const submitBtn = document.querySelector('#submitBtn');
 submitBtn.addEventListener('click', getTaskInput);

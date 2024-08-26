@@ -4,3 +4,17 @@
 .note-date{
     color:#828287;
     margin-top: 0;}
+
+    .command-container {
+        display: flex;
+        margin-bottom: 10px;
+      }
+      
+      .command {
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      
+      .definition {
+        color: gray;
+      }

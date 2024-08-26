@@ -4,6 +4,7 @@
 00-Projects-to-be-completed/Weather-app/config.js
 .DS_Store
 .DS_Store
+00-Projects-to-be-completed/
 00-Projects-to-be-completed/Weather-app/images/clear-day.svg
 00-Projects-to-be-completed/Weather-app/images/cloudy-1-day.svg
 00-Projects-to-be-completed/Weather-app/images/rainy-3.svg
@@ -61,5 +62,6 @@
 00-Projects-to-be-completed/Weather-app/img-animated/tropical-storm.svg
 00-Projects-to-be-completed/Weather-app/img-animated/wind.svg
 .DS_Store
-.gitignore
+
 00-Projects-to-be-completed/.DS_Store
+.DS_Store
