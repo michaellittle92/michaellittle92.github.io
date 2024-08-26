@@ -4,29 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
+    <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
+    <div class="container">
     <h2>Contact</h2>
-    <p class="message">test</p>
+    <p class="message"></p>
     <form action="">
-        <label for="first-name">First Name:</label>
-        <input type="text" id="first-name" class="input">
-
-        <label for="last-name">Last Name:</label>
-        <input type="text" id="last-name" class="input">
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" class="input">
-
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" class="input">
-
-        <label for="message">Message:</label>
-        <textarea name="message" class="input"></textarea>
-
-        <input type="button" name='submitbtn' id='submitbtn' value="Send">
+        <div class="form-container">
+            <div class="form-group">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" class="input" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" class="input" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" class="input" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" class="input">
+            </div>
+            <div class="form-group full-width">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" class="input" required></textarea>
+            </div>
+            <div class="form-group full-width">
+                <input type="button" name="submitbtn" id="submitbtn" value="Send">
+            </div>
+        </div>
     </form>
-
+    
+</div>
     <script src="scripts/contact.js"></script>
 </body>
 </html>
