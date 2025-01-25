@@ -3,31 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="http://example.com/favicon.png" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Michael Little</title>
+    <title>Random Joke Generator</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="container">
-      <nav class="navigation">
-        <h1> <a href="index.html">Michael Little</a></h1>
-        <ul>
-          <li><a href="./projects.html">Programming Projects</a></li>
-          <li><a href="./notes.html">Notes</a></li>
-          <li><a href="./contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    <div class="hero-image">
-      <div class="hero-text"><h2>I like to build things.</h2></div>
-     
+    <div id="container">
+      <div id="content">
+        <div id="loader"></div>
+        <div id="setup" class="roboto-condensed">
+          Error: Joke setup not found.
+        </div>
+        <div id="punchline" class="roboto-condensed">
+          Error: Joek punchline not found.
+        </div>
+      </div>
     </div>
-        
-        <!--I dont know what to put in here yet. -->
-      <footer>
-        <!--I dont know what to put in here yet either.-->
-      </footer>
-
-  </div>
-    <script src="script.js"></script>
   </body>
+
+  <script src="script.js"></script>
 </html>
