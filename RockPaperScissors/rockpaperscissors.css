@@ -1,0 +1,35 @@
+body {
+  background-color: aqua;
+}
+.container {
+  display: flex;
+  justify-content: space-between; /* Evenly spaces out the columns */
+  gap: 8px; /* Adds spacing between columns */
+}
+
+.column {
+  flex: 1; /* Makes all columns equal in width */
+  text-align: center; /* Centers the text inside each column */
+  background-color: #f0f0f0; /* Light background color */
+}
+
+.player-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh;
+}
+
+.player-buttons button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.game-functions,
+.player,
+.cpu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
