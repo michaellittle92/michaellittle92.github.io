@@ -55,11 +55,11 @@ function UpdateImage(user, choice) {
   if (user == "player") {
     document.querySelector(
       ".player-image"
-    ).src = `/images/${choice.toLowerCase()}-250x250.png`;
+    ).src = `https://d29rj10jbycao7.cloudfront.net/RockPaperScissors/images/${choice.toLowerCase()}-250x250.png`;
   } else {
     document.querySelector(
       ".cpu-image"
-    ).src = `/images/${choice.toLowerCase()}-250x250.png`;
+    ).src = `https://d29rj10jbycao7.cloudfront.net/RockPaperScissors/images/${choice.toLowerCase()}-250x250.png`;
   }
 }
 
