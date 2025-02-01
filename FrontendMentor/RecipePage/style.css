@@ -1,0 +1,141 @@
+:root {
+  --White: hsl(0, 0%, 100%);
+
+  --Stone-100: hsl(30, 54%, 90%);
+  --Stone-150: hsl(30, 18%, 87%);
+  --Stone-600: hsl(30, 10%, 34%);
+  --Stone-900: hsl(24, 5%, 18%);
+  --prep-bkg: hsl(100, 98%, 100);
+
+  --Brown-800: hsl(14, 45%, 36%);
+
+  --Rose-800: hsl(332, 51%, 32%);
+  --Rose-50: hsl(330, 100%, 98%);
+}
+
+body {
+  font-size: 16px;
+  background-color: var(--White);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--Stone-600);
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.grid-container {
+  display: grid;
+  width: 100%;
+  margin: 0 auto 70px;
+  background-color: var(--White);
+}
+
+.photograph {
+  width: 100%;
+}
+
+.text-content {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+h1 {
+  color: var(--Stone-900);
+  font-family: "Young Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  font-family: "Young Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+li::marker {
+  color: var(--Brown-800);
+  font-weight: bold;
+}
+
+li {
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.preperation {
+  background-color: var(--Rose-50);
+  padding: 5px 20px;
+  border-radius: 15px;
+}
+
+.preperation h2 {
+  color: var(--Rose-800);
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.preperation li {
+  margin-bottom: 10px;
+}
+
+.preperation li::marker {
+  color: var(--Rose-800);
+}
+
+.ingredients,
+.instructions,
+table td {
+  border-bottom: 1px solid var(--Stone-150);
+}
+
+.instructions li,
+.ingredients li {
+  margin-bottom: 15px;
+}
+
+.highlight {
+  color: var(--Brown-800);
+}
+
+.bold {
+  font-weight: 600;
+}
+
+table {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+table td {
+  padding-bottom: 10px;
+}
+
+.highlight td {
+  font-weight: bold;
+}
+
+.attribution {
+  text-align: center;
+}
+
+@media (min-width: 500px) {
+  body {
+    background-color: #f3dcd9;
+    padding-top: 30px;
+  }
+  .grid-container {
+    padding: 20px;
+    max-width: 450px;
+    border-radius: 15px;
+  }
+
+  .photograph {
+    border-radius: 15px;
+  }
+}
