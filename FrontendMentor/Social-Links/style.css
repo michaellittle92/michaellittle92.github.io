@@ -1,0 +1,91 @@
+:root {
+  --Green: hsl(75, 94%, 57%);
+  --White: hsl(0, 0%, 100%);
+  --Grey-700: hsl(0, 0%, 20%);
+  --Grey-800: hsl(0, 0%, 12%);
+  --Grey-900: hsl(0, 0%, 8%);
+}
+
+body {
+  box-sizing: border-box;
+  background-color: var(--Grey-900);
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  height: 100%;
+}
+
+.aligner {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 320px;
+  height: 550px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  background-color: var(--Grey-800);
+}
+.profile-photo {
+  border-radius: 100%;
+  margin: 20px auto;
+  width: 100px;
+}
+
+.users-name {
+  color: var(--White);
+  margin-bottom: 10px;
+  margin-top: 0px;
+  font-weight: 300;
+  font-size: 30px;
+}
+
+.location {
+  color: var(--Green);
+  margin-top: 0;
+  font-size: 14px;
+}
+
+.blurb {
+  color: var(--White);
+  font-weight: 100;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.external-link {
+  color: var(--White);
+  background-color: var(--Grey-700);
+  font-size: 13px;
+  font-weight: 600;
+  width: 80%;
+  height: 20px;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.external-link:hover {
+  background-color: var(--Green);
+  color: var(--Grey-900);
+  cursor: pointer;
+}
+
+.attribution {
+  display: hidden;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.attribution a {
+  color: white;
+}
