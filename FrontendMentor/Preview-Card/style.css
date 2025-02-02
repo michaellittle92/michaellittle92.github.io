@@ -1,0 +1,110 @@
+:root {
+  --Yellow: hsl(47, 88%, 63%);
+  --White: hsl(0, 0%, 100%);
+  --Gray-500: hsl(0, 0%, 42%);
+  --Gray-950: hsl(0, 0%, 7%);
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--Yellow);
+}
+
+.aligner {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.figtree-500 {
+  font-family: "Figtree", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.figtree-800 {
+  font-family: "Figtree", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+p {
+  font-size: 16px;
+}
+
+.card {
+  width: 320px;
+  background-color: var(--White);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--Gray-950);
+  box-shadow: 7px 7px var(--Gray-950);
+}
+
+.image-preview {
+  display: block;
+  width: 100%;
+  margin: 0 auto 10px;
+  border-radius: 1rem;
+}
+
+.tag {
+  background-color: var(--Yellow);
+  padding: 0.5rem;
+  margin: 1rem 0;
+  width: 6rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.tag:hover {
+  cursor: pointer;
+}
+
+.date {
+  font-size: 0.8rem;
+}
+
+.title {
+  font-size: 1.2rem;
+}
+
+.title:hover {
+  color: var(--Yellow);
+  cursor: pointer;
+}
+
+.blurb {
+  color: var(--Gray-500);
+  font-size: 0.9rem;
+}
+
+.author-line {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 1rem;
+}
+
+.author-photo {
+  width: 100%;
+  margin: auto;
+}
+
+.author,
+.author-photo {
+  cursor: pointer;
+}
+
+.author {
+  margin: auto 0 auto 0;
+}
