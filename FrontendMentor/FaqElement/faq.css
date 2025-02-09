@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--Light-pink);
-  background-image: url(assets/images/background-pattern-mobile.svg);
+  background-image: url(FrontendMentor/FaqElement/assets/images/background-pattern-mobile.svg);
   background-repeat: no-repeat;
   background-size: 100vw auto;
   background-position: top center;
@@ -110,7 +110,7 @@ body {
 
 @media (min-width: 600px) {
   body {
-    background-image: url(assets/images/background-pattern-desktop.svg);
+    background-image: url(FrontendMentor/FaqElement/assets/images/background-pattern-desktop.svg);
     background-size: auto;
   }
   .faq-element {
