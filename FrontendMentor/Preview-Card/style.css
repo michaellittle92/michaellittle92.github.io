@@ -108,3 +108,8 @@ p {
 .author {
   margin: auto 0 auto 0;
 }
+
+.attribution,
+.attribution a {
+  color: var(--White);
+}

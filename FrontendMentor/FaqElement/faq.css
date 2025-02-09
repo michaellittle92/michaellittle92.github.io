@@ -1,0 +1,119 @@
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Light-pink: hsl(275, 100%, 97%);
+  --Grayish-purple: hsl(292, 16%, 49%);
+  --Dark-purple: hsl(292, 42%, 14%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--Light-pink);
+  background-image: url(/assets/images/background-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: 100vw auto;
+  background-position: top center;
+}
+
+.faq-element {
+  grid-column: 1/2;
+  grid-row: 3/10;
+  margin: 10rem auto;
+  width: 75%;
+  background-color: var(--White);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.logo {
+  width: 30px;
+}
+
+.logo {
+  padding-right: 1rem;
+}
+
+.title {
+  color: var(--Dark-purple);
+  font-size: 26px;
+  font-family: "Work Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.faq-container {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+  grid-template-rows: auto;
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-container:last-child {
+  border-bottom: none;
+}
+
+.question {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  color: var(--Dark-purple);
+  font-size: 14px;
+  font-family: "Work Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.button {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.button img {
+  display: block;
+  height: 100%;
+  margin: auto;
+  cursor: pointer;
+}
+
+.answer {
+  display: none;
+}
+
+.show-answer {
+  display: block;
+  grid-column: 1/3;
+  grid-row: 2/3;
+  font-size: 14px;
+  color: var(--Grayish-purple);
+  font-family: "Work Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  padding-bottom: 1rem;
+}
+
+.open-button {
+  content: url(assets/images/icon-minus.svg);
+}
+
+@media (min-width: 600px) {
+  body {
+    background-image: url(/assets/images/background-pattern-desktop.svg);
+    background-size: auto;
+  }
+  .faq-element {
+    max-width: 500px;
+  }
+}
