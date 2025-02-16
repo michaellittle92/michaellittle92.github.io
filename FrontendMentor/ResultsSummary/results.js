@@ -1,7 +1,7 @@
 const results = [];
 
 async function GetData() {
-  const url = `data-01.json`;
+  const url = RandomJSONPicker();
   try {
     const response = await fetch(url);
 
@@ -16,6 +16,17 @@ async function GetData() {
   } catch (error) {
     console.error(error.message);
   }
+}
+
+function RandomJSONPicker() {
+  const jsonOptions = [
+    "data-01.json",
+    "data-02.json",
+    "data-03.json",
+    "data-04.json",
+  ];
+  const randomNumber = Math.floor(Math.random() * jsonOptions.length);
+  return jsonOptions[randomNumber];
 }
 
 function GetTotalScore(results) {
@@ -37,6 +48,29 @@ async function AnimateTotalScore(totalScore) {
   }
 }
 
+function SetUserCategory(totalScore) {
+  const overallResult = document.querySelector(".overall-result");
+
+  // Remove existing category classes
+  overallResult.classList.remove("poor", "ok", "great", "excellent");
+
+  let category = "";
+  if (totalScore < 25) {
+    category = "Poor";
+    overallResult.classList.add("poor");
+  } else if (totalScore < 50) {
+    category = "OK";
+    overallResult.classList.add("ok");
+  } else if (totalScore < 75) {
+    category = "Great";
+  } else {
+    category = "Excellent";
+    overallResult.classList.add("excellent");
+  }
+
+  document.querySelector(".user-category").innerText = category;
+}
+
 function UpdateCategoryScores(results) {
   const summaryElementScores = document.querySelectorAll(
     ".summary-element-score"
@@ -50,6 +84,7 @@ async function main() {
   await GetData();
   UpdateCategoryScores(results);
   const totalScore = GetTotalScore(results);
+  SetUserCategory(totalScore);
   AnimateTotalScore(totalScore);
 }
 
