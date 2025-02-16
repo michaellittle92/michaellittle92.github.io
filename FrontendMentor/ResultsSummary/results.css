@@ -45,9 +45,52 @@ body {
   border-radius: 0 0 2rem 2rem;
 }
 
+/* Theme for Poor category */
+.overall-result.poor {
+  background: linear-gradient(hsl(0, 100%, 40%), hsl(0, 100%, 30%));
+  color: var(--White);
+}
+
+.overall-result.poor .score {
+  background: linear-gradient(hsl(0, 100%, 50%), hsl(0, 100%, 40%));
+}
+
+/* Theme for OK category */
+.overall-result.ok {
+  background: linear-gradient(hsl(39, 100%, 50%), hsl(39, 100%, 40%));
+  color: var(--Dark-gray-blue);
+}
+
+.overall-result.ok .score {
+  background: linear-gradient(hsl(39, 100%, 60%), hsl(39, 100%, 50%));
+}
+
+/* Theme for Great category */
+.overall-result.great {
+  background: linear-gradient(hsl(166, 100%, 30%), hsl(166, 100%, 20%));
+  color: var(--White);
+}
+
+.overall-result.great .score {
+  background: linear-gradient(hsl(166, 100%, 40%), hsl(166, 100%, 30%));
+}
+
+.overall-result.great .user-category {
+  color: var(--Green-teal);
+}
+
+/* Theme for Excellent category */
+.overall-result.excellent {
+  background: linear-gradient(hsl(234, 85%, 35%), hsl(234, 85%, 25%));
+  color: var(--White);
+}
+
+.overall-result.excellent .score {
+  background: linear-gradient(hsl(234, 85%, 45%), hsl(234, 85%, 35%));
+}
+
 .overall-result h3 {
   text-align: center;
-  color: var(--Light-lavender);
   font-weight: 500;
 }
 
