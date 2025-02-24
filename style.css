@@ -5,6 +5,8 @@ body {
   font-family: "Hanken Grotesk", serif;
   font-optical-sizing: auto;
   font-style: normal;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .about-me,
