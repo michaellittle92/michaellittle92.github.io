@@ -9,10 +9,13 @@ body {
 
 .about-me,
 .my-projects,
-.frontend-mentor,
 .card {
   padding: 1rem;
   border-bottom: 1px solid #ccc;
+}
+
+.card:last-child {
+  border-bottom: none;
 }
 
 .about-me h1 {
