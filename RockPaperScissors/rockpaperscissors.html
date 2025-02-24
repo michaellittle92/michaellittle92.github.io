@@ -5,26 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="rockpaperscissors.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
       <div class="player-buttons">
-        <button class="game-buttons" id="rock">Rock</button>
-        <button class="game-buttons" id="paper">Paper</button>
-        <button class="game-buttons" id="scissors">Scissors</button>
+        <button class="game-buttons" id="rock">
+          <img src="images/stone.png" alt="Rock" />
+        </button>
+        <button class="game-buttons" id="paper">
+          <img src="images/new-document.png" alt="Paper" />
+        </button>
+        <button class="game-buttons" id="scissors">
+          <img src="images/scissor.png" alt="Scissors" />
+        </button>
       </div>
       <div class="player">
-        <img class="player-image" src="images/empty-250x250.png" alt="" />
+        <div class="player-image"></div>
         <p class="player-name">Player</p>
         <p class="player-score">0</p>
       </div>
       <div class="game-functions">
         <p class="status"></p>
-        <p>Reset</p>
-        <button class="game-buttons" id="reset">Reset?</button>
+        <button class="game-buttons" id="reset">Reset</button>
       </div>
       <div class="cpu">
-        <img class="cpu-image" src="images/empty-250x250.png" alt="" />
+        <div class="cpu-image"></div>
         <p class="cpu-name">CPU</p>
         <p class="cpu-score">0</p>
       </div>

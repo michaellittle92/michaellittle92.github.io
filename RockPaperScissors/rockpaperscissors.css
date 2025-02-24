@@ -1,7 +1,16 @@
+body {
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2rem;
+}
+
 .container {
+  height: 100vh;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-rows: 80vh 20vh;
   align-items: center;
   justify-content: center;
 }
@@ -9,14 +18,92 @@
 .player-buttons {
   grid-column: 1/2;
   grid-row: 2/3;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.player,
-.cpu,
 .game-functions {
   text-align: center;
 }
 
+.player,
+.cpu {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.player {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
 .game-functions {
-  grid-row: 1/3;
+  grid-row: 1/2;
+}
+
+.player-image,
+.cpu-image {
+  width: 250px;
+  height: 250px;
+  margin: auto;
+}
+
+.game-buttons {
+  width: 100px;
+  width: 100px;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  margin-bottom: 2rem;
+}
+.game-buttons img {
+  width: 100px;
+  width: 100px;
+  margin: auto;
+}
+
+.paper {
+  background-image: url(images/new-document.png);
+  background-size: cover;
+}
+
+.scissors {
+  background-image: url(images/scissor.png);
+  background-size: cover;
+}
+
+.rock {
+  background-image: url(images/stone.png);
+  background-size: cover;
+}
+
+.empty {
+  background-image: url("");
+  background-size: cover;
+}
+
+#reset {
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2rem;
+  background-color: #fa6402;
+  color: white;
+  padding: 0.5rem;
+  width: 150px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+#reset:hover {
+  background-color: #f87e2c;
+}
+
+.status {
+  color: #f87e2c;
+  height: 1.5rem;
 }
