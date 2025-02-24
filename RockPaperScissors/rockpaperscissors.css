@@ -60,6 +60,17 @@ body {
   background-color: rgba(0, 0, 0, 0);
   border: none;
   margin-bottom: 2rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.game-buttons:hover {
+  transform: scale(1.05);
+}
+
+.game-buttons:active {
+  transform: scale(0.95);
+  filter: brightness(0.8);
 }
 .game-buttons img {
   width: 100px;
