@@ -22,8 +22,8 @@ async function get_number_of_visits() {
     if (!response.ok) {
       throw new Error(`Resonse status: ${response.status}`);
     }
-
     const json = await response.json();
+    console.log(json);
     render_number_of_visits(json);
   } catch (error) {
     console.error(error.message);
