@@ -31,7 +31,6 @@
           </a>
           <p>Pulls a random joke from the Jokes API</p>
         </div>
-
         <div class="project">
           <a href="/RockPaperScissors/rockpaperscissors.html">
             <!-- <img src="images/Screenshot 2025-02-24 at 3.34.52 pm.png" class="project-image" alt="Rock Paper Scissors Game">-->
@@ -39,6 +38,20 @@
           </a>
           <p>
             Single Player Rock Paper Scissors build with Vanilla JS and CSS Grid
+          </p>
+        </div>
+        <div class="project">
+          <a href="#visit-count-container">
+            <h3>Visitor Counter</h3>
+          </a>
+          <p>
+            This simple visitor counter was a fun weekend project designed to
+            explore serverless architecture on AWS. It uses an API Gateway REST
+            API to trigger a Lambda function, which reads, updates, and writes a
+            visitor count stored in DynamoDB. The updated count is returned to
+            the frontend and displayed in real-time. IAM roles manage access
+            between services securely, and CORS is configured on the API Gateway
+            to allow requests from the frontend.
           </p>
         </div>
       </div>
@@ -197,7 +210,7 @@
         </p>
       </div>
     </div>
-
+    <div id="visit-count-container"></div>
     <script src="script.js"></script>
   </body>
 </html>
