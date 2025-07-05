@@ -72,3 +72,7 @@ body {
 #visit-count-container {
   text-align: center;
 }
+
+.project-image {
+  width: 100%;
+}
